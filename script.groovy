@@ -1,6 +1,10 @@
-def buildJar() {
+def buildApp() {
     echo "building the application..."
     sh 'mvn install'
+} 
+def testApp() {
+    echo "Testing the application..."
+
 } 
 
 def buildImage() {
