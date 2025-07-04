@@ -1,7 +1,7 @@
 def buildApp() {
     echo "building the application..."
     sh 'chmod +x gradlew'
-    sh 'gradle build'  // Use Gradle's wrapper to build the project
+    sh './gradlew clean build' 
 } 
 def testApp() {
     echo "Testing the application..."
