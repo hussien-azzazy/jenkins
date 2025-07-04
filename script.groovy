@@ -1,11 +1,7 @@
 def buildApp() {
     echo "building the application..."
     sh 'chmod +x gradlew'
-<<<<<<< HEAD
     sh 'gradle build'  
-=======
-    sh './gradlew clean build' 
->>>>>>> a4f8e4ca477e0cc48c43ec93708077c489d9d6f4
 } 
 def testApp() {
     echo "Testing the application..."
