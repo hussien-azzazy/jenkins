@@ -1,12 +1,12 @@
 # Build stage
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM gradle:7.5-jdk21 AS build  
 WORKDIR /app
 COPY . .
-RUN mvn clean package
+RUN gradle clean build  
 
 # Run stage
-FROM openjdk:8-jre-alpine
+FROM openjdk:21-jdk-slim  
 EXPOSE 8080
 WORKDIR /usr/app
-COPY --from=build /app/target/java-maven-app-*.jar /usr/app/
-CMD java -jar java-maven-app-*.jar
+COPY --from=build /app/build/libs/java-gradle-app-*.jar /usr/app/
+CMD ["java", "-jar", "java-gradle-app-*.jar"]
