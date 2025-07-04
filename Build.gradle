@@ -25,3 +25,8 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// This will ensure the clean task is available
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

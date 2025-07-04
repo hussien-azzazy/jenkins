@@ -2,7 +2,7 @@
 FROM gradle:jdk21-corretto AS build
 WORKDIR /app
 COPY . .
-RUN gradle clean build  
+RUN ./gradlew clean build
 
 # Run stage
 FROM openjdk:21-jdk-slim  
