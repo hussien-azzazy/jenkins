@@ -1,5 +1,5 @@
 # Build stage
-FROM gradle:7.5-jdk21 AS build  
+FROM gradle:jdk21-corretto AS build
 WORKDIR /app
 COPY . .
 RUN gradle clean build  
